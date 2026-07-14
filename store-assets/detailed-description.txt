@@ -1,0 +1,20 @@
+Epoch Converter is a fast, no-nonsense timestamp tool built for developers, DBAs, and anyone who stares at raw Unix time all day.
+
+CONVERT INSTANTLY, BOTH WAYS
+• Epoch → date: paste any timestamp and get local time, UTC, ISO 8601, and relative time ("in 2 years", "3 days ago")
+• Date → epoch: pick a date and get seconds and milliseconds, interpreted as local or UTC
+• Auto-detects the unit — seconds, milliseconds, microseconds, or nanoseconds — from the number's length
+• Live epoch ticker in the popup; one click copies the current timestamp
+• Switch between 24-hour and AM/PM display
+
+SEE TIMESTAMPS RIGHT ON THE PAGE
+On domains you choose, epoch values in log viewers, database UIs (phpMyAdmin, admin panels), and API responses are highlighted automatically. Hover one to get the full conversion in a tooltip — click any value to copy it. localhost works out of the box; add the site you're on with one click ("+ add this tab" in the popup) or type any domain, wildcards included. Changes apply to open tabs instantly, and a short welcome page walks you through it on first install. Toggle the highlighting off anytime.
+
+RIGHT-CLICK TO CONVERT ANYTHING
+Select a timestamp or a date string on any page, right-click, and choose "Convert timestamp ⇄ date".
+
+BUILT FOR DEVELOPERS
+A dark, monospace, editor-style UI that feels like home. Copy buttons everywhere. No accounts, no setup.
+
+PRIVATE BY DESIGN
+Everything runs locally in your browser. No data is collected or transmitted — the extension makes zero network requests. The only things it saves are your two settings (time format and highlight on/off).

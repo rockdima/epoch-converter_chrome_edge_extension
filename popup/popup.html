@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Epoch Converter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>epoch-converter<span class="caret" aria-hidden="true"></span></h1>
+    <button id="now-ticker" class="ticker" title="Click to copy current epoch seconds">…</button>
+  </header>
+
+  <div class="format-row">
+    <span class="fmt-label" id="fmt-24h">24h</span>
+    <label class="switch">
+      <input type="checkbox" id="hour12-toggle">
+      <span class="slider"></span>
+    </label>
+    <span class="fmt-label" id="fmt-ampm">am/pm</span>
+  </div>
+
+  <section class="card">
+    <h2>// epoch → date</h2>
+    <div class="row">
+      <input id="epoch-input" type="text" inputmode="numeric"
+             placeholder="1752480000" autocomplete="off" spellcheck="false">
+      <button id="epoch-now" class="secondary" title="Fill with current time">now()</button>
+    </div>
+    <div id="epoch-unit" class="hint"></div>
+    <div id="epoch-error" class="error hidden"></div>
+    <dl id="epoch-results" class="results hidden">
+      <div class="result"><dt>local</dt><dd><span id="res-local"></span><button class="copy" data-copy-target="res-local" title="Copy">⧉</button></dd></div>
+      <div class="result"><dt>utc</dt><dd><span id="res-utc"></span><button class="copy" data-copy-target="res-utc" title="Copy">⧉</button></dd></div>
+      <div class="result"><dt>iso</dt><dd><span id="res-iso" class="str"></span><button class="copy" data-copy-target="res-iso" title="Copy">⧉</button></dd></div>
+      <div class="result"><dt>rel</dt><dd><span id="res-relative"></span></dd></div>
+    </dl>
+  </section>
+
+  <section class="card">
+    <h2>// date → epoch</h2>
+    <div class="row">
+      <input id="date-input" type="datetime-local" step="1">
+      <select id="date-tz" title="Interpret the date as">
+        <option value="local">local</option>
+        <option value="utc">utc</option>
+      </select>
+    </div>
+    <div id="date-error" class="error hidden"></div>
+    <dl id="date-results" class="results hidden">
+      <div class="result"><dt>sec</dt><dd><span id="res-sec" class="num"></span><button class="copy" data-copy-target="res-sec" title="Copy">⧉</button></dd></div>
+      <div class="result"><dt>ms</dt><dd><span id="res-ms" class="num"></span><button class="copy" data-copy-target="res-ms" title="Copy">⧉</button></dd></div>
+    </dl>
+  </section>
+
+  <section class="card">
+    <h2>// marked domains</h2>
+    <div class="row">
+      <input id="domain-input" type="text" placeholder="example.com"
+             autocomplete="off" spellcheck="false">
+      <button id="domain-add" class="secondary" title="Allow marking timestamps on this domain">add</button>
+    </div>
+    <div id="domain-error" class="error hidden"></div>
+    <button id="domain-current" class="quick-add hidden"></button>
+    <ul id="domain-list" class="domains"></ul>
+  </section>
+
+  <label class="toggle">
+    <input type="checkbox" id="highlight-toggle">
+    mark timestamps on allowed domains (hover to convert)
+  </label>
+
+  <script src="popup.js"></script>
+</body>
+</html>

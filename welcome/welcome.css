@@ -1,0 +1,63 @@
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --comment: #8b949e;
+  --num: #e3b341;
+  --accent: #58a6ff;
+  --ok: #3fb950;
+  --err: #f85149;
+  --mono: "Cascadia Code", "JetBrains Mono", "Fira Code", Consolas,
+          ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.7 var(--mono);
+}
+
+main { max-width: 640px; }
+
+h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+.ok { color: var(--ok); font-weight: 400; font-size: 14px; margin-left: 8px; }
+
+h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--num);
+  margin: 0 0 8px;
+}
+h2::before { content: "// "; color: var(--comment); font-weight: 400; }
+
+section {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin: 18px 0;
+}
+
+ul { margin: 8px 0 0; padding-left: 22px; }
+li { margin: 4px 0; }
+
+p { margin: 6px 0; }
+
+.comment { color: var(--comment); font-size: 13px; }
+.num { color: var(--num); }
+.accent { color: var(--accent); }
+.err { color: var(--err); }
+strong { color: var(--num); }
+em { color: var(--accent); font-style: normal; }

@@ -1,0 +1,12 @@
+/* Editor "search match" look: amber chip, readable on light and dark pages. */
+.__epoch-hl__ {
+  background: rgba(227, 179, 65, 0.30) !important;
+  border-bottom: 2px solid #d29922 !important;
+  border-radius: 2px !important;
+  padding: 0 2px !important;
+  cursor: help !important;
+}
+
+.__epoch-hl__:hover {
+  background: rgba(227, 179, 65, 0.5) !important;
+}
